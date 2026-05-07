@@ -1,0 +1,381 @@
+/* cryptoLumenati — clean static rebuild
+   Fonts (per Enfold theme): body Inconsolata, headings Varela Round.
+   Section colors and watermark images duplicated from the live site. */
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: 'Inconsolata', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #ffffff;
+  background: #000000;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { color: inherit; text-decoration: none; }
+a:hover { opacity: 0.7; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+p { margin: 0 0 1em; }
+p:last-child { margin-bottom: 0; }
+
+h1, h2, h3 {
+  margin: 0;
+  font-family: 'Varela Round', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+/* ---------------- Header ---------------- */
+
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 45px;
+  background: #000000;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  padding: 0 28px;
+}
+
+.site-header .inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.site-header .brand {
+  font-family: 'Varela Round', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.site-header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.site-header nav a {
+  font-family: 'Inconsolata', monospace;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  font-weight: 700;
+  line-height: 45px;
+  text-transform: none;
+}
+
+.site-header nav a:hover { color: #00ffff; opacity: 1; }
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 6px;
+}
+
+/* ---------------- Sections ---------------- */
+
+.section {
+  position: relative;
+  min-height: 75vh;
+  padding: 150px 28px;
+  background-color: #000000;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.section .container {
+  position: relative;
+  width: 100%;
+  max-width: 1310px;
+  margin: 0 auto;
+}
+
+/* Two-column rows */
+.row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.row.image-left { grid-template-columns: 1fr 2fr; }
+.row.equal      { grid-template-columns: 1fr 1fr; }
+.row.single     { display: block; }
+
+.col-text > * + * { margin-top: 18px; }
+.col-image img { width: 100%; }
+
+/* Heading: 40px Varela Round, no underline rule */
+.section-heading {
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  margin: 0 0 30px;
+  padding: 0;
+  border: 0;
+}
+
+.section-text { font-size: 16px; line-height: 1.75; }
+.section-text p + p { margin-top: 1em; }
+
+/* ---------------- Section variants ---------------- */
+
+/* Hero */
+.section.hero {
+  min-height: 100vh;
+  background-image: url("images/watermark-color.png");
+  background-color: #000000;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+.section.hero .row { grid-template-columns: 1fr 1fr; gap: 40px; }
+.section.hero .col-text p { font-size: 17px; line-height: 1.7; }
+
+/* Projection — cyan, black text */
+.section.projection {
+  background-image: url("images/watermark-white-76.png");
+  background-color: #00ffff;
+  color: #000000;
+}
+.section.projection .section-heading { color: #000000; margin-top: 50px; }
+
+/* Skills — black, hotel-view image */
+.section.skills {
+  background-image: url("images/watermark-white-50.png");
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Education — red */
+.section.education {
+  background-image: url("images/watermark-white-50.png");
+  background-color: #ff1d25;
+  color: #ffffff;
+}
+
+/* Equipment — black, teal watermark */
+.section.equipment {
+  background-image: url("images/watermark-teal-50.png");
+  background-color: #000000;
+  color: #ffffff;
+}
+.section.equipment .col-image img { max-width: 300px; margin: 0 auto; }
+
+/* Marketing — brown */
+.section.marketing {
+  background-image: url("images/watermark-white-50.png");
+  background-color: #754c24;
+  color: #ffffff;
+}
+
+/* Community — black, red watermark */
+.section.community {
+  background-image: url("images/watermark-red-50.png");
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Governance — white, black text */
+.section.governance {
+  background-image: url("images/watermark-black-25.png");
+  background-color: #ffffff;
+  color: #000000;
+}
+.section.governance .section-heading { color: #000000; }
+.section.governance .col-image img { max-width: 300px; margin: 0 auto; }
+
+/* Sustainability — black */
+.section.sustainability {
+  background-image: url("images/watermark-white-50.png");
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Jamboree — bright cyan-blue */
+.section.jamboree {
+  background-image: url("images/watermark-teal-50.png");
+  background-color: #29abe2;
+  color: #ffffff;
+}
+.section.jamboree .section-heading {
+  font-size: 56px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+/* ---------------- Galleries ---------------- */
+
+.masonry {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.masonry-projection { grid-template-columns: repeat(3, 1fr); }
+.masonry a {
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #111;
+}
+.masonry a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.masonry a:hover img { transform: scale(1.04); }
+
+/* Partner logos grid (community section) — 6 logos in a row */
+.partner-grid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 24px;
+  align-items: center;
+  justify-items: center;
+}
+.partner-grid a {
+  display: block;
+  width: 100%;
+  max-width: 140px;
+  padding: 20px;
+}
+.partner-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---------------- Footer ---------------- */
+
+.site-footer {
+  background: #1a1a1a;
+  color: #888;
+  padding: 22px 28px;
+  font-size: 13px;
+  font-family: 'Inconsolata', monospace;
+  letter-spacing: 0.04em;
+}
+.footer-inner {
+  max-width: 1310px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.site-footer .copyright { color: #888; }
+.site-footer a { color: #bbb; }
+.site-footer a:hover { color: #fff; opacity: 1; }
+.social-icons {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 14px;
+}
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  color: #ccc;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.social-icons a:hover { background: rgba(255,255,255,0.12); color: #fff; }
+@media (max-width: 540px) {
+  .footer-inner { flex-direction: column; gap: 14px; }
+}
+
+#main { padding-top: 45px; }
+
+/* Scroll-to-top */
+.scroll-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.65);
+  color: #fff;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  z-index: 99;
+  border: 1px solid rgba(255,255,255,0.18);
+}
+.scroll-top.visible { display: flex; }
+
+/* ---------------- Responsive ---------------- */
+
+@media (max-width: 1100px) {
+  .partner-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 960px) {
+  .row,
+  .row.image-left,
+  .row.equal,
+  .section.hero .row { grid-template-columns: 1fr; gap: 32px; }
+  .col-image { order: -1; max-width: 540px; margin: 0 auto; }
+  .row.image-left .col-image { order: -1; }
+  .section { padding: 100px 22px; min-height: auto; background-attachment: scroll; }
+  .section.hero { min-height: auto; padding: 110px 22px 80px; }
+  .section-heading { font-size: 32px; }
+  .section.jamboree .section-heading { font-size: 40px; }
+  .masonry { grid-template-columns: repeat(2, 1fr); }
+  .masonry-projection { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 720px) {
+  .site-header { height: auto; padding: 8px 16px; }
+  .site-header .inner { flex-wrap: wrap; }
+  .menu-toggle { display: inline-block; }
+  .site-header nav { width: 100%; display: none; }
+  .site-header nav.open { display: block; }
+  .site-header nav ul {
+    flex-direction: column;
+    gap: 0;
+    align-items: stretch;
+  }
+  .site-header nav a {
+    line-height: 1;
+    padding: 12px 0;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    display: block;
+  }
+  #main { padding-top: 0; }
+  .section.hero { padding-top: 60px; }
+  .partner-grid { grid-template-columns: repeat(2, 1fr); }
+}
